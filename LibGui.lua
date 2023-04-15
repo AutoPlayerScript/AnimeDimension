@@ -525,12 +525,6 @@ function GuiLib:MakeWindow(WindowConfig)
 		}), "Text")
 	})
 
-	local Logo = AddThemeObject(SetProps(MakeElement("Image", "rbxassetid://13077143859"), {
-	    Position = UDim2.new(0, 7, 0.5, -11), -- tăng 4 pixel và dời 2 pixel sang phải
-	    Size = UDim2.new(0, 34, 0, 34), -- tăng 2 pixel
-	    BackgroundTransparency = 1
-	}), "Text")
-
 	local DragPoint = SetProps(MakeElement("TFrame"), {
 		Size = UDim2.new(1, 0, 0, 50)
 	})
@@ -605,6 +599,21 @@ function GuiLib:MakeWindow(WindowConfig)
 		Size = UDim2.new(1, 0, 0, 1),
 		Position = UDim2.new(0, 0, 1, -1)
 	}), "Stroke")
+	
+	local Logo = AddThemeObject(SetProps(MakeElement("Image", "rbxassetid://13077143859"), {
+		     Position = UDim2.new(0, 5, 0.5, -11), -- kéo lên 4 pixel
+		     Size = UDim2.new(0, 34, 0, 34), -- size tăng 2 pixel
+		     BackgroundTransparency = 1,
+		     ImageColor3 = Color3.new(1, 1, 1), -- đảm bảo hình ảnh không bị mờ hoặc đổi màu
+		     ImageRectOffset = Vector2.new(0, 0), -- đảm bảo hình ảnh được hiển thị toàn bộ
+		     ImageRectSize = Vector2.new(0, 0)
+		}), "Text")
+
+		-- đóng khung hình tròn
+		local RoundedCorner = MakeElement("UICorner")
+		RoundedCorner.CornerRadius = UDim.new(1, 0)
+		RoundedCorner.Parent = Logo
+
 
 	local MainWindow = AddThemeObject(SetChildren(SetProps(MakeElement("RoundFrame", Color3.fromRGB(255, 255, 255), 0, 10), {
 		Parent = Autoplayer,
