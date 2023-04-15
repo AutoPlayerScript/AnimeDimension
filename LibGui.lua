@@ -529,8 +529,8 @@ function GuiLib:MakeWindow(WindowConfig)
 		Size = UDim2.new(1, 0, 0, 50)
 	})
 	local Logo = AddThemeObject(SetProps(MakeElement("Image", "rbxassetid://13142881249"), {
-		    Position = UDim2.new(0, 7, 0.5, -11), -- tăng 4 pixel và dời 2 pixel sang phải
-		    Size = UDim2.new(0, 34, 0, 30), -- tăng 2 pixel
+		    Position = UDim2.new(0, 0.5, 0.5, -11), -- tăng 4 pixel và dời 2 pixel sang phải
+		    Size = UDim2.new(0, 36, 0, 40), -- tăng 2 pixel
 		    BackgroundTransparency = 1
 		}), "Text") 
 			-------------------------------------------------------------------------------------------------------------------------------------------------------
