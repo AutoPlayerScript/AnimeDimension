@@ -513,17 +513,25 @@ function GuiLib:MakeWindow(WindowConfig)
 			Size = UDim2.new(0, 18, 0, 18)
 		}), "Text")
 	})
+	local Logo = AddThemeObject(SetProps(MakeElement("Image", "rbxassetid://13077143859"), {
+   		 Position = UDim2.new(0, 5, 0.5, -9), -- điều chỉnh tọa độ ảnh theo nhu cầu
+  		  Size = UDim2.new(0, 18, 0, 18),
+   		 BackgroundTransparency = 1
+		}), "Text")
 
-	local MinimizeBtn = SetChildren(SetProps(MakeElement("Button"), {
-		Size = UDim2.new(0.5, 0, 1, 0),
-		BackgroundTransparency = 1
-	}), {
-		AddThemeObject(SetProps(MakeElement("Image", "rbxassetid://7072719338"), {
-			Position = UDim2.new(0, 9, 0, 6),
+		local MinimizeBtn = SetChildren(SetProps(MakeElement("Button"), {
+		    Size = UDim2.new(0.5, 0, 1, 0),
+		    BackgroundTransparency = 1
+		}), {
+		    Logo, -- Thêm logo vào trước nút minimize
+		    AddThemeObject(SetProps(MakeElement("Image", "rbxassetid://7072719338"), {
+			Position = UDim2.new(0, 28, 0.5, -9), -- Điều chỉnh tọa độ của nút minimize theo nhu cầu
 			Size = UDim2.new(0, 18, 0, 18),
 			Name = "Ico"
-		}), "Text")
-	})
+		    }), "Text")
+		})
+
+	
 
 	local DragPoint = SetProps(MakeElement("TFrame"), {
 		Size = UDim2.new(1, 0, 0, 50)
