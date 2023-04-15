@@ -528,11 +528,12 @@ function GuiLib:MakeWindow(WindowConfig)
 	local DragPoint = SetProps(MakeElement("TFrame"), {
 		Size = UDim2.new(1, 0, 0, 50)
 	})
-	local Logo = AddThemeObject(SetProps(MakeElement("Image", "rbxassetid://13077143859"), {
-    Position = UDim2.new(0, 7, 0.5, -11), -- tăng 4 pixel và dời 2 pixel sang phải
-    Size = UDim2.new(0, 34, 0, 34), -- tăng 2 pixel
-    BackgroundTransparency = 1
-}), "Text") -------------------------------------------------------------------------------------------------------------------------------------------------------
+	local Logo = AddThemeObject(SetProps(MakeElement("Image", "rbxassetid://13142881249"), {
+		    Position = UDim2.new(0, 7, 0.5, -11), -- tăng 4 pixel và dời 2 pixel sang phải
+		    Size = UDim2.new(0, 34, 0, 30), -- tăng 2 pixel
+		    BackgroundTransparency = 1
+		}), "Text") 
+			-------------------------------------------------------------------------------------------------------------------------------------------------------
 
 	local WindowStuff = AddThemeObject(SetChildren(SetProps(MakeElement("RoundFrame", Color3.fromRGB(255, 255, 255), 0, 10), {
 		Size = UDim2.new(0, 150, 1, -50),
