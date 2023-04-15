@@ -515,7 +515,7 @@ function GuiLib:MakeWindow(WindowConfig)
 	})
 	local Logo = AddThemeObject(SetProps(MakeElement("Image", "rbxassetid://13077143859"), {
    		 Position = UDim2.new(0, 5, 0.5, -9), -- điều chỉnh tọa độ ảnh theo nhu cầu
-  		  Size = UDim2.new(0, 18, 0, 18),
+  		  Size = UDim2.new(0, 32, 0, 32),
    		 BackgroundTransparency = 1
 		}), "Text")
 
@@ -525,7 +525,7 @@ function GuiLib:MakeWindow(WindowConfig)
 		}), {
 		    Logo, -- Thêm logo vào trước nút minimize
 		    AddThemeObject(SetProps(MakeElement("Image", "rbxassetid://7072719338"), {
-			Position = UDim2.new(0, 28, 0.5, -9), -- Điều chỉnh tọa độ của nút minimize theo nhu cầu
+			Position = UDim2.new(0, 3, 0.5, -9), -- Điều chỉnh tọa độ của nút minimize theo nhu cầu
 			Size = UDim2.new(0, 18, 0, 18),
 			Name = "Ico"
 		    }), "Text")
