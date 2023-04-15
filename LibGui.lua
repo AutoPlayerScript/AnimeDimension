@@ -513,19 +513,18 @@ function GuiLib:MakeWindow(WindowConfig)
 			Size = UDim2.new(0, 18, 0, 18)
 		}), "Text")
 	})
-	local Logo = AddThemeObject(SetProps(MakeElement("Image", "rbxassetid://13077143859"), {
-   		 Position = UDim2.new(0, 5, 0.5, -9), -- điều chỉnh tọa độ ảnh theo nhu cầu
-  		  Size = UDim2.new(0, 32, 0, 32),
-   		 BackgroundTransparency = 1
-		}), "Text")
+		local Logo = AddThemeObject(SetProps(MakeElement("Image", "rbxassetid://13077143859"), {
+			 Position = UDim2.new(0, 5, 0.5, -9), -- điều chỉnh tọa độ ảnh theo nhu cầu
+			  Size = UDim2.new(0, 32, 0, 32),
+			 BackgroundTransparency = 1
+			}), "Text")
 
 		local MinimizeBtn = SetChildren(SetProps(MakeElement("Button"), {
 		    Size = UDim2.new(0.5, 0, 1, 0),
 		    BackgroundTransparency = 1
 		}), {
-		    Logo, -- Thêm logo vào trước nút minimize
 		    AddThemeObject(SetProps(MakeElement("Image", "rbxassetid://7072719338"), {
-			Position = UDim2.new(0, 3, 0.5, -9), -- Điều chỉnh tọa độ của nút minimize theo nhu cầu
+			Position = UDim2.new(0, 23, 0.5, -9), -- Điều chỉnh tọa độ của nút minimize theo nhu cầu
 			Size = UDim2.new(0, 18, 0, 18),
 			Name = "Ico"
 		    }), "Text")
@@ -614,17 +613,18 @@ function GuiLib:MakeWindow(WindowConfig)
 		Size = UDim2.new(0, 615, 0, 344),
 		ClipsDescendants = true
 	}), {
-		--SetProps(MakeElement("Image", "rbxassetid://3523728077"), {
-		--	AnchorPoint = Vector2.new(0.5, 0.5),
-		--	Position = UDim2.new(0.5, 0, 0.5, 0),
-		--	Size = UDim2.new(1, 80, 1, 320),
-		--	ImageColor3 = Color3.fromRGB(33, 33, 33),
-		--	ImageTransparency = 0.7
-		--}),
+		SetProps(MakeElement("Image", "rbxassetid://3523728077"), {  --toi vua mo cai nay
+			AnchorPoint = Vector2.new(0.5, 0.5),
+			Position = UDim2.new(0.5, 0, 0.5, 0),
+			Size = UDim2.new(1, 80, 1, 320),
+			ImageColor3 = Color3.fromRGB(33, 33, 33),
+			ImageTransparency = 0.7
+		}),
 		SetChildren(SetProps(MakeElement("TFrame"), {
 			Size = UDim2.new(1, 0, 0, 50),
 			Name = "TopBar"
 		}), {
+			Logo, -- Thêm logo vào trước nút minimize-----------------------------------------------------------------------------------------------------
 			WindowName,
 			WindowTopBarLine,
 			AddThemeObject(SetChildren(SetProps(MakeElement("RoundFrame", Color3.fromRGB(255, 255, 255), 0, 7), {
