@@ -19,7 +19,8 @@ local GuiLib = {
 			Stroke = Color3.fromRGB(60, 60, 60),
 			Divider = Color3.fromRGB(60, 60, 60),
 			Text = Color3.fromRGB(240, 240, 240),
-			TextDark = Color3.fromRGB(170,170,255)
+			TextDark = Color3.fromRGB(170,170,255),
+			ColorButton = Color3.fromRGB(185,170,255)
 		}
 	},
 	SelectedTheme = "Default",
@@ -812,8 +813,9 @@ function GuiLib:MakeWindow(WindowConfig)
 					AddThemeObject(SetProps(MakeElement("Label", Text, 15), {
 						Size = UDim2.new(1, -12, 1, 0),
 						Position = UDim2.new(0, 12, 0, 0),
-						Font = Enum.Font.GothamBold,
+						Font = Enum.Font.Roboto, --------------------Font = Enum.Font.GothamBold
 						Name = "Content",
+						FontSize = 10,
 						TextXAlignment = Enum.TextXAlignment.Center --------------------------tôi chỉnh sửa canh giữa cho nút
 					}), "Text"),
 					AddThemeObject(MakeElement("Stroke"), "Stroke")
@@ -889,7 +891,7 @@ function GuiLib:MakeWindow(WindowConfig)
 					AddThemeObject(SetProps(MakeElement("Image", ButtonConfig.Icon), {
 						Size = UDim2.new(0, 20, 0, 20),
 						Position = UDim2.new(1, -30, 0, 7),
-					}), "TextDark"),
+					}), "ColorButton"),
 					AddThemeObject(MakeElement("Stroke"), "Stroke"),
 					Click
 				}), "Second")
