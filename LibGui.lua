@@ -813,7 +813,8 @@ function GuiLib:MakeWindow(WindowConfig)
 						Size = UDim2.new(1, -12, 1, 0),
 						Position = UDim2.new(0, 12, 0, 0),
 						Font = Enum.Font.GothamBold,
-						Name = "Content"
+						Name = "Content",
+						TextXAlignment = Enum.TextXAlignment.Center --------------------------tôi chỉnh sửa canh giữa cho nút
 					}), "Text"),
 					AddThemeObject(MakeElement("Stroke"), "Stroke")
 				}), "Second")
@@ -882,7 +883,8 @@ function GuiLib:MakeWindow(WindowConfig)
 						Size = UDim2.new(1, -12, 1, 0),
 						Position = UDim2.new(0, 12, 0, 0),
 						Font = Enum.Font.GothamBold,
-						Name = "Content"
+						Name = "Content",
+						TextXAlignment = Enum.TextXAlignment.Center --------------------------tôi chỉnh sửa canh giữa cho nút
 					}), "Text"),
 					AddThemeObject(SetProps(MakeElement("Image", ButtonConfig.Icon), {
 						Size = UDim2.new(0, 20, 0, 20),
@@ -1004,7 +1006,7 @@ function GuiLib:MakeWindow(WindowConfig)
 				SliderConfig.Name = SliderConfig.Name or "Slider"
 				SliderConfig.Min = SliderConfig.Min or 0
 				SliderConfig.Max = SliderConfig.Max or 100
-				SliderConfig.Increment = SliderConfig.Increment or 1
+				SliderConfig.Increment = SliderConfig.Increment or 0.5
 				SliderConfig.Default = SliderConfig.Default or 50
 				SliderConfig.Callback = SliderConfig.Callback or function() end
 				SliderConfig.ValueName = SliderConfig.ValueName or ""
