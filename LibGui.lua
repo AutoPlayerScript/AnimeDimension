@@ -531,7 +531,7 @@ function GuiLib:MakeWindow(WindowConfig)
 	})
 	local Logo = AddThemeObject(SetProps(MakeElement("Image", "rbxassetid://13217801150"), {
 		    Position = UDim2.new(0, 0, 0, 0), --vi trí logo
-		    Size = UDim2.new(0, 40, 0, 40), -- tăng 2 pixel
+		    Size = UDim2.new(0, 45, 0, 45), -- Size
 		    BackgroundTransparency = 1
 		}), "Text") 
 			-------------------------------------------------------------------------------------------------------------------------------------------------------
@@ -815,7 +815,7 @@ function GuiLib:MakeWindow(WindowConfig)
 						Position = UDim2.new(0, 12, 0, 0),
 						Font = Enum.Font.Roboto, --------------------Font = Enum.Font.GothamBold
 						Name = "Content",
-						FontSize = 10,
+						FontSize = 3,
 						TextXAlignment = Enum.TextXAlignment.Center --------------------------tôi chỉnh sửa canh giữa cho nút
 					}), "Text"),
 					AddThemeObject(MakeElement("Stroke"), "Stroke")
@@ -846,6 +846,7 @@ function GuiLib:MakeWindow(WindowConfig)
 						Size = UDim2.new(1, -24, 0, 0),
 						Position = UDim2.new(0, 12, 0, 26),
 						Font = Enum.Font.GothamSemibold,
+						FontSize = 10,						
 						Name = "Content",
 						TextWrapped = true
 					}), "TextDark"),
