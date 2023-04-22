@@ -15,7 +15,7 @@ local GuiLib = {
 	Themes = {
 		Default = {
 			Main = Color3.fromRGB(40, 20, 60),
-			Second = Color3.fromRGB(32,32,32),
+			Second = Color3.fromRGB(30, 15, 50),
 			Stroke = Color3.fromRGB(60, 60, 60),
 			Divider = Color3.fromRGB(60, 60, 60),
 			Text = Color3.fromRGB(240, 240, 240),
@@ -481,8 +481,8 @@ function GuiLib:MakeWindow(WindowConfig)
 	WindowConfig.IntroText = WindowConfig.IntroText or "Autoplayer Library"
 	WindowConfig.CloseCallback = WindowConfig.CloseCallback or function() end
 	WindowConfig.ShowIcon = WindowConfig.ShowIcon or false
-	WindowConfig.Icon = WindowConfig.Icon or "rbxassetid://8834748103"
-	WindowConfig.IntroIcon = WindowConfig.IntroIcon or "rbxassetid://8834748103"
+	WindowConfig.Icon = WindowConfig.Icon or "rbxassetid://13217801150"
+	WindowConfig.IntroIcon = WindowConfig.IntroIcon or "rbxassetid://13217801150"
 	GuiLib.Folder = WindowConfig.ConfigFolder
 	GuiLib.SaveCfg = WindowConfig.SaveConfig
 
@@ -528,7 +528,7 @@ function GuiLib:MakeWindow(WindowConfig)
 	local DragPoint = SetProps(MakeElement("TFrame"), {
 		Size = UDim2.new(1, 0, 0, 50)
 	})
-	local Logo = AddThemeObject(SetProps(MakeElement("Image", "rbxassetid://13142881249"), {
+	local Logo = AddThemeObject(SetProps(MakeElement("Image", "rbxassetid://13217801150"), {
 		    Position = UDim2.new(0, 0.5, 0.5, -11), --vi trí logo
 		    Size = UDim2.new(0, 36, 0, 40), -- tăng 2 pixel
 		    BackgroundTransparency = 1
@@ -658,8 +658,8 @@ function GuiLib:MakeWindow(WindowConfig)
 		MainWindow.Visible = false
 		UIHidden = true
 		GuiLib:MakeNotification({
-			Name = "Interface Hidden",
-			Content = "Tap RightShift to reopen the interface",
+			Name = "GUI Hidden",
+			Content = "Tap RightShift to reopen the GUI",
 			Time = 5
 		})
 		WindowConfig.CloseCallback()
@@ -1387,11 +1387,11 @@ function GuiLib:MakeWindow(WindowConfig)
 					BackgroundTransparency = 1,
 					TextColor3 = Color3.fromRGB(255, 255, 255),
 					PlaceholderColor3 = Color3.fromRGB(210,210,210),
-					PlaceholderText = "Input",
+					PlaceholderText = "Input your text here",
 					Font = Enum.Font.GothamSemibold,
 					TextXAlignment = Enum.TextXAlignment.Center,
 					TextSize = 14,
-					ClearTextOnFocus = false
+					ClearTextOnFocus = true
 				}), "Text")
 
 				local TextContainer = AddThemeObject(SetChildren(SetProps(MakeElement("RoundFrame", Color3.fromRGB(255, 255, 255), 0, 4), {
