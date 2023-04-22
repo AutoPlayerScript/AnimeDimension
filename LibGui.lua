@@ -899,7 +899,7 @@ function GuiLib:MakeWindow(WindowConfig)
 				}), "Second")
 
 				AddConnection(Click.MouseEnter, function()
-					TweenService:Create(ButtonFrame, TweenInfo.new(0.25, Enum.EasingStyle.Quint, Enum.EasingDirection.Out), {BackgroundColor3 = Color3.fromRGB(GuiLib.Themes[GuiLib.SelectedTheme].Second.R * 255 + 3, GuiLib.Themes[GuiLib.SelectedTheme].Second.G * 255 + 3, GuiLib.Themes[GuiLib.SelectedTheme].Second.B * 255 + 3)}):Play()
+					TweenService:Create(ButtonFrame, TweenInfo.new(0.25, Enum.EasingStyle.Quint, Enum.EasingDirection.Out), {BackgroundColor3 = Color3.fromRGB(GuiLib.Themes[GuiLib.SelectedTheme].Second.R * 255 + 10, GuiLib.Themes[GuiLib.SelectedTheme].Second.G * 255 + 10, GuiLib.Themes[GuiLib.SelectedTheme].Second.B * 255 + 10)}):Play()
 				end)
 
 				AddConnection(Click.MouseLeave, function()
@@ -907,14 +907,14 @@ function GuiLib:MakeWindow(WindowConfig)
 				end)
 
 				AddConnection(Click.MouseButton1Up, function()
-					TweenService:Create(ButtonFrame, TweenInfo.new(0.25, Enum.EasingStyle.Quint, Enum.EasingDirection.Out), {BackgroundColor3 = Color3.fromRGB(GuiLib.Themes[GuiLib.SelectedTheme].Second.R * 255 + 3, GuiLib.Themes[GuiLib.SelectedTheme].Second.G * 255 + 3, GuiLib.Themes[GuiLib.SelectedTheme].Second.B * 255 + 3)}):Play()
+					TweenService:Create(ButtonFrame, TweenInfo.new(0.25, Enum.EasingStyle.Quint, Enum.EasingDirection.Out), {BackgroundColor3 = Color3.fromRGB(GuiLib.Themes[GuiLib.SelectedTheme].Second.R * 255 + 10, GuiLib.Themes[GuiLib.SelectedTheme].Second.G * 255 + 10, GuiLib.Themes[GuiLib.SelectedTheme].Second.B * 255 + 10)}):Play()
 					spawn(function()
 						ButtonConfig.Callback()
 					end)
 				end)
 
 				AddConnection(Click.MouseButton1Down, function()
-					TweenService:Create(ButtonFrame, TweenInfo.new(0.25, Enum.EasingStyle.Quint, Enum.EasingDirection.Out), {BackgroundColor3 = Color3.fromRGB(GuiLib.Themes[GuiLib.SelectedTheme].Second.R * 255 + 6, GuiLib.Themes[GuiLib.SelectedTheme].Second.G * 255 + 6, GuiLib.Themes[GuiLib.SelectedTheme].Second.B * 255 + 6)}):Play()
+					TweenService:Create(ButtonFrame, TweenInfo.new(0.25, Enum.EasingStyle.Quint, Enum.EasingDirection.Out), {BackgroundColor3 = Color3.fromRGB(GuiLib.Themes[GuiLib.SelectedTheme].Second.R * 255 + 20, GuiLib.Themes[GuiLib.SelectedTheme].Second.G * 255 + 20, GuiLib.Themes[GuiLib.SelectedTheme].Second.B * 255 + 20)}):Play()
 				end)
 
 				function Button:Set(ButtonText)
