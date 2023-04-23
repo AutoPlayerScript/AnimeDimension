@@ -2,71 +2,12 @@ if not game:IsLoaded() then
 	game.Loaded:Wait()
 end
 _G.Settings = {
-	farmraidtoken = false,
-	
-	afkandraid = false,
-	afkandall = false,
-	autospingem = false,
-	autoclaimrewardraid = false,
-
-	eggspintime = "3",
-	autoclaimrewardspeed = false,
-	equipselectmain = false,
-	equipselectmain1 = false,
-	equipselectmain2 = false,
-	selectmain = "None",
-	selectmain1 = "None",
-	selectmain2 = "None",
-	autosellcommon = false,
-	autoselluncommon = false,
-	autosellrare = false,
-	autosellepic = false,
-
-	autoselllegendary = false,
-	autoequipbest = false,
-	autoupgrade = false,
-	Height = 20,
-	Height1 = -20,
-	otherds = "@here",
-	dsuser = "Not Set",
-	AutoPunch = true,
-	punchdelay = "1",
-
-	
-	AutoFarm = false,
-	AutoTP = false,
-	AutoTP1 = false,
-	AutoTP2 = true,
-	AutoTP3 = true,
-	
-	Autocustom = false,
-	AutoRetry = false,
-	webhookurl = "",
-	AutoSkill1 = true,
-	AutoSkill2 = true,
-	AutoSkill3 = true,
-	AutoSkill4 = true,
-	AutoSkill5 = true,
-	AutoSkill6 = true,
-	AutoSkill7 = true,
-	Combo = false,
-	kickwebhook = false,
-	Hidename = false,
-	Autoboss = false,
-	webhook = false,
-	raidwebhook = false,
-
-	
-	
-	
-	
-	
-	
 	
 	Autolvl = false,
 	equipcardbest =false,
 	AutoMode = false,
 	Autoselected ="None",
+	
 	AutoMap = false,
 	custommapselect ="None",
 	CustomDifficulty = "None",
@@ -76,21 +17,23 @@ _G.Settings = {
 	BossRush = false,
 	TimeChallenge =false,
 	Retry = false,
-	Distance = 10,
-	FriendsOnly = true,
-	webhookspeed = "6",
+		
 	Hardcore = false,
 	autosellCard = false,
 	claimreward = false,
+	
 	NormalAttack =false,
 	skilldelay = 1,
 	AutoSkill = true,
 	TeleON = true,
 	Teleselect="None",
+	
 	distance = 10,
 	Speed = 80,
+	
 	Teamset =false,
 	TeamChosen ="None",
+	
 	mainTeam1="None",
 	assist1Team1="None",
 	assist2Team1="None",
@@ -100,23 +43,32 @@ _G.Settings = {
 	mainTeam3="None",
 	assist1Team3="None",
 	assist2Team3="None",
+	
 	selectegg ="None",
 	RandomEgg =false,
 	EggQuaranty = 5,
+	
 	kickrejoin = true,
+	Hidename = false,
 	toggleguikey = "0",
+	FriendsOnly = true,
 	
+	AutoTrait = false,
+	Traitselect="None",
+	Traitstop = "None",
+	CurrencySelect ="None",
 	
-	
-
-	
-	
-	
-	
-	
+	webhook = false,
+	webhookspeed = "6",
+	webhookurl ="None",
+	dsuser = "None",
+	otherds = "None",
+	levelwebhook = false,
+	rareitemwebhook = false
 	
 	
 }
+
 local a = "Auto Player"
 local b = "AnimeDimension.lua"
 local gamefolder = "ADS"
@@ -1583,7 +1535,7 @@ if checkKey then
 	
 	A:AddToggle(
 		{
-			Name = "☣AUTO SPIN TRAIT ON/OFF☣",
+			Name = "☣AUTO SPIN TRAIT ON/OFF (UNFINISHED)☣",
 			Default = _G.Settings.AutoTrait,
 			Callback = function(H)
 				_G.Settings.AutoTrait = H
@@ -2082,7 +2034,42 @@ B:AddTextbox(
 
 	})
 	
-	===========================================================================================================================================
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
 	
 else
 	-- Tạo UI nếu có Key sai hoặc không có
@@ -2121,7 +2108,7 @@ else
 			end
 
 			--check key valid here keyValid()
-			loadstring(game:HttpGet("https://raw.githubusercontent.com/AutoPlayerScript/AnimeDimension/main/AD_beta.lua"))()
+			loadstring(game:HttpGet("https://raw.githubusercontent.com/AutoPlayerScript/AnimeDimension/main/ADS.lua"))()
 		end
 	})
 	x:AddLabel("If you like this script donate me a cup of beer")
@@ -2174,7 +2161,7 @@ else
 		end
 
 	})
-	C:AddParagraph("♥♥♥ If you like our work you can Donate us ♥♥♥"," You can support us by donating through WATCHING ADS linksverse, or by directly gifting us some Robux, real money, etc. .If you encounter any issues or have any feedback, please feel free to leave your comments on our Discord server")
+	C:AddParagraph("♥If you like our work you can Donate us♥"," You can support us by donating through WATCHING ADS linksverse, or by directly gifting us some Robux, real money, etc. .If you encounter any issues or have any feedback, please feel free to leave your comments on our Discord server")
 	C:AddButton({
 		Name = "Link our discord server",
 		Icon = "copy",
