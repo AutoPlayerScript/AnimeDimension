@@ -472,7 +472,7 @@ function GuiLib:MakeWindow(WindowConfig)
 	local Minimized = false
 	local Loaded = false
 	local UIHidden = false
-print(100)
+
 	WindowConfig = WindowConfig or {}
 	WindowConfig.Name = WindowConfig.Name or "Autoplayer Library"
 	WindowConfig.ConfigFolder = WindowConfig.ConfigFolder or WindowConfig.Name
@@ -494,7 +494,7 @@ print(100)
 			makefolder(WindowConfig.ConfigFolder)
 		end	
 	end
-print(101)
+
 	local TabHolder = AddThemeObject(SetChildren(SetProps(MakeElement("ScrollFrame", Color3.fromRGB(255, 255, 255), 4), {
 		Size = UDim2.new(1, 0, 1, -50)
 	}), {
@@ -537,7 +537,7 @@ print(101)
 		    BackgroundTransparency = 1
 		}), "Text") 
 			-------------------------------------------------------------------------------------------------------------------------------------------------------
-print(102)
+
 	local WindowStuff = AddThemeObject(SetChildren(SetProps(MakeElement("RoundFrame", Color3.fromRGB(255, 255, 255), 0, 10), {
 		Size = UDim2.new(0, 150, 1, -50),
 		Position = UDim2.new(0, 0, 0, 50)
@@ -596,7 +596,7 @@ print(102)
 			}), "TextDark")
 		}),
 	}), "Second")
-print(103)
+
 	local WindowName = AddThemeObject(SetProps(MakeElement("Label", WindowConfig.Name, 14), {
 		Size = UDim2.new(1, -30, 2, 0),
 		Position = UDim2.new(0, 25, 0, -24),
@@ -608,7 +608,7 @@ print(103)
 		Size = UDim2.new(1, 0, 0, 1),
 		Position = UDim2.new(0, 0, 1, -1)
 	}), "Stroke")
-print(104)	
+	
 	local MainWindow = AddThemeObject(SetChildren(SetProps(MakeElement("RoundFrame", Color3.fromRGB(255, 255, 255), 0, 10), {
 		Parent = Autoplayer,
 		Position = UDim2.new(0.5, -307, 0.5, -172),
@@ -645,7 +645,7 @@ print(104)
 		DragPoint,
 		WindowStuff
 	}), "Main")
-print(105)
+
 	if WindowConfig.ShowIcon then
 		WindowName.Position = UDim2.new(0, 50, 0, -24)
 		local WindowIcon = SetProps(MakeElement("Image", WindowConfig.Icon), {
@@ -667,7 +667,7 @@ print(105)
 		})
 		WindowConfig.CloseCallback()
 	end)
-print(106)
+
 	AddConnection(UserInputService.InputBegan, function(Input)
 		if Input.KeyCode == Enum.KeyCode.RightShift and UIHidden then
 			MainWindow.Visible = true
@@ -693,7 +693,7 @@ print(106)
 		end
 		Minimized = not Minimized    
 	end)
-print(107)
+
 	local function LoadSequence()
 		MainWindow.Visible = false
 		local LoadSequenceLogo = SetProps(MakeElement("Image", WindowConfig.IntroIcon), {
@@ -726,7 +726,7 @@ print(107)
 		LoadSequenceLogo:Destroy()
 		LoadSequenceText:Destroy()
 	end 
-print(108)
+
 	if WindowConfig.IntroEnabled then
 		LoadSequence()
 	end	
@@ -761,7 +761,7 @@ print(108)
 		if GetIcon(TabConfig.Icon) ~= nil then
 			TabFrame.Ico.Image = GetIcon(TabConfig.Icon)
 		end	
-print(109)
+
 		local Container = AddThemeObject(SetChildren(SetProps(MakeElement("ScrollFrame", Color3.fromRGB(255, 255, 255), 5), {
 			Size = UDim2.new(1, -150, 1, -50),
 			Position = UDim2.new(0, 150, 0, 50),
@@ -803,7 +803,7 @@ print(109)
 			TabFrame.Title.Font = Enum.Font.GothamBlack
 			Container.Visible = true   
 		end)
-print(110)
+
 		local function GetElements(ItemParent)
 			local ElementFunction = {}
 			function ElementFunction:AddLabel(Text)
@@ -899,7 +899,7 @@ print(110)
 					AddThemeObject(MakeElement("Stroke"), "Stroke"),
 					Click
 				}), "Second")
-print(111)
+
 				AddConnection(Click.MouseEnter, function()
 					TweenService:Create(ButtonFrame, TweenInfo.new(0.25, Enum.EasingStyle.Quint, Enum.EasingDirection.Out), {BackgroundColor3 = Color3.fromRGB(GuiLib.Themes[GuiLib.SelectedTheme].Second.R * 255 + 10, GuiLib.Themes[GuiLib.SelectedTheme].Second.G * 255 + 10, GuiLib.Themes[GuiLib.SelectedTheme].Second.B * 255 + 10)}):Play()
 				end)
@@ -925,8 +925,7 @@ print(111)
 
 				return Button
 			end    
-print(1111)
-						function ElementFunction:AddToggle(ToggleConfig)
+			function ElementFunction:AddToggle(ToggleConfig)
 				ToggleConfig = ToggleConfig or {}
 				ToggleConfig.Name = ToggleConfig.Name or "Toggle"
 				ToggleConfig.Default = ToggleConfig.Default or false
@@ -959,7 +958,7 @@ print(1111)
 						Name = "Ico"
 					}),
 				})
-print(10112)
+
 				local ToggleFrame = AddThemeObject(SetChildren(SetProps(MakeElement("RoundFrame", Color3.fromRGB(255, 255, 255), 0, 5), {
 					Size = UDim2.new(1, 0, 0, 38),
 					Parent = ItemParent
@@ -974,7 +973,7 @@ print(10112)
 					ToggleBox,
 					Click
 				}), "Second")
-print(10113)
+
 				function Toggle:Set(Value)
 					Toggle.Value = Value
 					TweenService:Create(ToggleBox, TweenInfo.new(0.3, Enum.EasingStyle.Quint, Enum.EasingDirection.Out), {BackgroundColor3 = Toggle.Value and ToggleConfig.Color or GuiLib.Themes.Default.Divider}):Play()
@@ -1008,8 +1007,7 @@ print(10113)
 				end	
 				return Toggle
 			end  
-print(10114)
-					function ElementFunction:AddSlider(SliderConfig)
+			function ElementFunction:AddSlider(SliderConfig)
 				SliderConfig = SliderConfig or {}
 				SliderConfig.Name = SliderConfig.Name or "Slider"
 				SliderConfig.Min = SliderConfig.Min or 0
@@ -1056,7 +1054,7 @@ print(10114)
 					}), "Text"),
 					SliderDrag
 				})
-print(10115)
+
 				local SliderFrame = AddThemeObject(SetChildren(SetProps(MakeElement("RoundFrame", Color3.fromRGB(255, 255, 255), 0, 4), {
 					Size = UDim2.new(1, 0, 0, 65),
 					Parent = ItemParent
@@ -1081,7 +1079,7 @@ print(10115)
 						Dragging = false 
 					end 
 				end)
-print(10116)
+
 				UserInputService.InputChanged:Connect(function(Input)
 					if Dragging and Input.UserInputType == Enum.UserInputType.MouseMovement then 
 						local SizeScale = math.clamp((Input.Position.X - SliderBar.AbsolutePosition.X) / SliderBar.AbsoluteSize.X, 0, 1)
@@ -1112,7 +1110,7 @@ print(10116)
 				DropdownConfig.Callback = DropdownConfig.Callback or function() end
 				DropdownConfig.Flag = DropdownConfig.Flag or nil
 				DropdownConfig.Save = DropdownConfig.Save or false
-print(10117)
+
 				local Dropdown = {Value = DropdownConfig.Default, Options = DropdownConfig.Options, Buttons = {}, Toggled = false, Type = "Dropdown", Save = DropdownConfig.Save}
 				local MaxElements = 5
 
@@ -1134,7 +1132,7 @@ print(10117)
 				local Click = SetProps(MakeElement("Button"), {
 					Size = UDim2.new(1, 0, 1, 0)
 				})
-print(10118)
+
 				local DropdownFrame = AddThemeObject(SetChildren(SetProps(MakeElement("RoundFrame", Color3.fromRGB(255, 255, 255), 0, 5), {
 					Size = UDim2.new(1, 0, 0, 38),
 					Parent = ItemParent,
@@ -1180,7 +1178,7 @@ print(10118)
 				AddConnection(DropdownList:GetPropertyChangedSignal("AbsoluteContentSize"), function()
 					DropdownContainer.CanvasSize = UDim2.new(0, 0, 0, DropdownList.AbsoluteContentSize.Y)
 				end)  
-print(10119)
+
 				local function AddOptions(Options)
 					for _, Option in pairs(Options) do
 						local OptionBtn = AddThemeObject(SetProps(SetChildren(MakeElement("Button", Color3.fromRGB(40, 40, 40)), {
@@ -1228,7 +1226,7 @@ print(10119)
 						end	
 						return
 					end
-print(10120)
+
 					Dropdown.Value = Value
 					DropdownFrame.F.Selected.Text = Dropdown.Value
 
@@ -1251,7 +1249,7 @@ print(10120)
 						TweenService:Create(DropdownFrame,TweenInfo.new(.15, Enum.EasingStyle.Quad, Enum.EasingDirection.Out),{Size = Dropdown.Toggled and UDim2.new(1, 0, 0, DropdownList.AbsoluteContentSize.Y + 38) or UDim2.new(1, 0, 0, 38)}):Play()
 					end
 				end)
-print(10121)
+
 				Dropdown:Refresh(Dropdown.Options, false)
 				Dropdown:Set(Dropdown.Value)
 				if DropdownConfig.Flag then				
@@ -1287,7 +1285,7 @@ print(10121)
 						Name = "Value"
 					}), "Text")
 				}), "Main")
-print(10122)
+
 				local BindFrame = AddThemeObject(SetChildren(SetProps(MakeElement("RoundFrame", Color3.fromRGB(255, 255, 255), 0, 5), {
 					Size = UDim2.new(1, 0, 0, 38),
 					Parent = ItemParent
@@ -1315,7 +1313,7 @@ print(10122)
 						BindBox.Value.Text = ""
 					end
 				end)
-print(10123)
+
 				AddConnection(UserInputService.InputBegan, function(Input)
 					if UserInputService:GetFocusedTextBox() then return end
 					if (Input.KeyCode.Name == Bind.Value or Input.UserInputType.Name == Bind.Value) and not Bind.Binding then
@@ -1351,7 +1349,7 @@ print(10123)
 						end
 					end
 				end)
-print(10124)
+
 				AddConnection(Click.MouseEnter, function()
 					TweenService:Create(BindFrame, TweenInfo.new(0.25, Enum.EasingStyle.Quint, Enum.EasingDirection.Out), {BackgroundColor3 = Color3.fromRGB(GuiLib.Themes[GuiLib.SelectedTheme].Second.R * 255 + 3, GuiLib.Themes[GuiLib.SelectedTheme].Second.G * 255 + 3, GuiLib.Themes[GuiLib.SelectedTheme].Second.B * 255 + 3)}):Play()
 				end)
@@ -1363,7 +1361,7 @@ print(10124)
 				AddConnection(Click.MouseButton1Up, function()
 					TweenService:Create(BindFrame, TweenInfo.new(0.25, Enum.EasingStyle.Quint, Enum.EasingDirection.Out), {BackgroundColor3 = Color3.fromRGB(GuiLib.Themes[GuiLib.SelectedTheme].Second.R * 255 + 3, GuiLib.Themes[GuiLib.SelectedTheme].Second.G * 255 + 3, GuiLib.Themes[GuiLib.SelectedTheme].Second.B * 255 + 3)}):Play()
 				end)
-print(10125)
+
 				AddConnection(Click.MouseButton1Down, function()
 					TweenService:Create(BindFrame, TweenInfo.new(0.25, Enum.EasingStyle.Quint, Enum.EasingDirection.Out), {BackgroundColor3 = Color3.fromRGB(GuiLib.Themes[GuiLib.SelectedTheme].Second.R * 255 + 6, GuiLib.Themes[GuiLib.SelectedTheme].Second.G * 255 + 6, GuiLib.Themes[GuiLib.SelectedTheme].Second.B * 255 + 6)}):Play()
 				end)
@@ -1403,7 +1401,7 @@ print(10125)
 					TextSize = 14,
 					ClearTextOnFocus = true
 				}), "Text")
-print(1026)
+
 				local TextContainer = AddThemeObject(SetChildren(SetProps(MakeElement("RoundFrame", Color3.fromRGB(255, 255, 255), 0, 4), {
 					Size = UDim2.new(0, 24, 0, 24),
 					Position = UDim2.new(1, -12, 0.5, 0),
@@ -1413,7 +1411,7 @@ print(1026)
 					TextboxActual
 				}), "Main")
 
-print(10127)
+
 				local TextboxFrame = AddThemeObject(SetChildren(SetProps(MakeElement("RoundFrame", Color3.fromRGB(255, 255, 255), 0, 5), {
 					Size = UDim2.new(1, 0, 0, 38),
 					Parent = ItemParent
@@ -1470,7 +1468,7 @@ print(10127)
 
 				local ColorH, ColorS, ColorV = 1, 1, 1
 				local Colorpicker = {Value = ColorpickerConfig.Default, Toggled = false, Type = "Colorpicker", Save = ColorpickerConfig.Save}
-print(10128)
+
 				local ColorSelection = Create("ImageLabel", {
 					Size = UDim2.new(0, 18, 0, 18),
 					Position = UDim2.new(select(3, Color3.toHSV(Colorpicker.Value))),
@@ -1507,7 +1505,7 @@ print(10128)
 					Create("UICorner", {CornerRadius = UDim.new(0, 5)}),
 					HueSelection
 				})
-print(10129)
+
 				local ColorpickerContainer = Create("Frame", {
 					Position = UDim2.new(0, 0, 0, 32),
 					Size = UDim2.new(1, 0, 1, -32),
@@ -1563,7 +1561,7 @@ print(10129)
 					ColorpickerContainer,
 					AddThemeObject(MakeElement("Stroke"), "Stroke"),
 				}), "Second")
-print(10130)
+
 				AddConnection(Click.MouseButton1Click, function()
 					Colorpicker.Toggled = not Colorpicker.Toggled
 					TweenService:Create(ColorpickerFrame,TweenInfo.new(.15, Enum.EasingStyle.Quad, Enum.EasingDirection.Out),{Size = Colorpicker.Toggled and UDim2.new(1, 0, 0, 148) or UDim2.new(1, 0, 0, 38)}):Play()
@@ -1727,7 +1725,7 @@ print(10130)
 		end
 		return ElementFunction   
 	end  
-print(1040)
+
 	--if writefile and isfile then
 	--	if not isfile("NewLibraryNotification1.txt") then
 	--		local http_req = (syn and syn.request) or (http and http.request) or http_request
